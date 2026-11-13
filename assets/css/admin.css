@@ -1,0 +1,40 @@
+/* Staff administration styles (in addition to style.css) */
+body.admin h1{font-size:clamp(1.7rem,3.5vw,2.3rem);margin-bottom:.6em}
+body.admin h2{font-size:1.35rem;margin-top:1.4em}
+body.admin .panel h2:first-child{margin-top:0}
+.whoami{font-size:.9rem;color:var(--ink-soft)}
+.lead{color:var(--ink-soft);max-width:70ch}
+.narrow{max-width:420px}
+.hint{font-size:.83rem;color:var(--ink-soft);font-weight:400}
+.count{display:inline-block;background:var(--gold);color:#1c1608;font-size:.75rem;font-weight:700;border-radius:999px;padding:0 7px;margin-left:4px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:24px}
+.stat{text-decoration:none;color:var(--ink)}
+.stat b{display:block;font-family:var(--serif);font-size:2.2rem;color:var(--green);line-height:1.1}
+.stat span{color:var(--ink-soft)}
+.actions-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 18px}
+.actions-row .btn[aria-current="true"]{border-color:var(--green)}
+.table{width:100%;border-collapse:collapse;min-width:640px;background:var(--surface);border:1px solid var(--line)}
+.table th,.table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.table thead th{font-size:.85rem;color:var(--ink-soft);background:var(--sage)}
+.table tr.muted td{color:var(--ink-soft)}
+form.inline{display:inline}
+form.inline select{width:auto;padding:5px 8px}
+fieldset{border:1px solid var(--line);border-radius:8px;padding:14px 16px 16px;margin:0;background:var(--surface)}
+legend{font-weight:600;padding:0 6px}
+.check{display:flex;gap:10px;align-items:center;font-weight:500}
+.check input{width:auto}
+.form.compact{gap:8px;margin:10px 0}
+.form.panel{margin-top:24px}
+.admin-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.admin-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.admin-gallery .panel{padding:12px}
+.message{margin-bottom:16px}
+.message.unread{border-left:4px solid var(--gold)}
+.message header{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;margin-bottom:6px}
+.message .date{margin-left:auto}
+.message .meta{font-size:.92rem;color:var(--ink-soft)}
+.message form{display:inline-block;margin:10px 8px 0 0}
+.inline-details{display:inline-block;margin-left:6px}
+.inline-details summary{cursor:pointer;color:var(--green);font-size:.88rem}
+.sticky-save{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 0px);background:var(--paper);padding:12px 0;border-top:1px solid var(--line)}
+code{background:var(--sage);padding:1px 5px;border-radius:4px}

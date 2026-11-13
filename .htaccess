@@ -1,0 +1,33 @@
+# Gelan Boys Boarding School — Apache settings
+Options -Indexes
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+
+# Block direct access to configuration, data and backup files
+<FilesMatch "^(config\.php|config\.local\.php|.*\.sql|.*\.sqlite|README\.md|\.env)$">
+  Require all denied
+</FilesMatch>
+
+# Force HTTPS once the SSL certificate is active (remove the # from the 3 lines below)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Browser caching for images, styles and scripts
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
